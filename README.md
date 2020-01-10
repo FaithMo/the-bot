@@ -1,2 +1,2 @@
 # the-bot
-![](bot-thing.jpg)
+![](images/bot-thing.jpg)
