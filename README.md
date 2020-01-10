@@ -1,7 +1,8 @@
 # MuziBot
 ---------------------------------------------------------------------------------------------------------
-<img src="images/bot-thing.jpg" width="200px" height="auto">
 in collaboration with discord.com.
+<img src="images/bot-thing.jpg" width="200px" height="auto">
+
 
 More than half of Umuzi recruits learned about it on social media, which proves the good marketing the organisation has online. But what makes potential recruits lose interest when inquiring about it?
 
