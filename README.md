@@ -9,6 +9,8 @@ One of the good practices in marketing is grabing your audience's attention and 
 
 With MuziBot potential recruits are able to learn about Umuzi without having to leave their LOVED socials. 
 
+THE BIG IDEA IS TO DIPLOY IT ON FACEBOOK MESSENGER APP
+
 -----------------------------------------------------------------------------------------------------------
 
 It focuses on these fields and helps: 
