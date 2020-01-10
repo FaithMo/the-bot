@@ -92,7 +92,19 @@ client.on("ready", () => {
 
     if(choose.content == "Copywriting" || choose.content == "copywriting"){
       choose.channel.send("For more information on this, here is the link. Enjoy😋");
-      choose.channel.send("https://www.umuzi.org/copywriting"); 
+      //choose.channel.send("https://www.umuzi.org/copywriting"); 
+      choose.channel.send(
+        get('CopywritingUmuzi.html')
+        .then(function(response){
+          return response.text()
+        })
+        .then(function(html){
+          var parser = DOMParser();
+
+          var doc = parser.parseFromString(html, "text/html")
+          console.log(doc);
+        })
+      )
     }
     if(choose.content == "data science" || choose.content == "data engineering"){
       choose.channel.send("For more information on this, here is the link. Enjoy😋");
@@ -121,4 +133,4 @@ client.on("ready", () => {
   }
 
 
-client.login();
+client.login("NjY0MDI4MTc0OTc1MzY5MjE2.XhWdsw.qIbyqKPGJ_kn7diSuleJFzvyji8");
