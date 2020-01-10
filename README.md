@@ -1,6 +1,7 @@
 # MuziBot
-![](images/bot-thing.jpg)
-
+---------------------------------------------------------------------------------------------------------
+<img src="images/bot-thing.jpg" width="200px" height="auto">
+in collaboration with discord.com.
 
 More than half of Umuzi recruits learned about it on social media, which proves the good marketing the organisation has online. But what makes potential recruits lose interest when inquiring about it?
 
@@ -10,6 +11,10 @@ With MuziBot potential recruits are able to learn about Umuzi without having to 
 
 -----------------------------------------------------------------------------------------------------------
 
-it focuses on these fields and helps the user 
+It focuses on these fields and helps: 
 
-![](im%20(1).png)
+<img src="im%20(1).png" width="400px" height="auto">
+
+
+
+NOTE: The token used to log into the server is secret and may be terminated if detected on github so the `my_bot.js`will not connect to the discord server unless the owner (me) hands in the key.
