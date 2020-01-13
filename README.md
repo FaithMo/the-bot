@@ -5,9 +5,11 @@ in collaboration with discordapp.com.
 
 More than half of Umuzi recruits learnt about it on social media, which proves the good marketing the organisation has online 😎. But what makes potential recruits lose interest when inquiring about it?
 
-One of the good practices in marketing is grabing your audience's attention and making sure that it is not lost before a certain action is done. 
+One of the good practices in marketing is grabbing your audience's attention and making sure that it is not lost before a certain action is done. 
 
 With MuziBot potential recruits are able to learn about Umuzi without having to leave their LOVED socials. 
+
+
 
 THE BIG IDEA IS TO DIPLOY IT ON FACEBOOK MESSENGER APP
 
