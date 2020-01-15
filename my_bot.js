@@ -1,6 +1,11 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const express = require ('express');
+const app = express();
+var fs = require('fs');
 const logo = "https://umuzi.gnomio.com/pluginfile.php/1/core_admin/logo/0x150/1573344297/Logo-02.png";
+const bodyParser = require('body-parser');
+//import htmlToImage from 'html-to-image';
 
 client.on("ready", () => {
   console.log("connected as " + client.user.tag);
@@ -18,7 +23,7 @@ client.on("ready", () => {
 
     const attachment = new Discord.Attachment('im (1).png');
     generalChannel.send(attachment);
-    generalChannel.send("Hello from Umuzi! \nNice to hear from you. \n \nPlease type a keyword you want me to help you with.");
+    generalChannel.send("Hello from Umuzi! \n𝓷𝓲𝓬𝓮 𝓽𝓸 𝓼𝓮𝓮 𝔂𝓸𝓾 \n \nPlease type a keyword you want me to help you with.");
   });
 });
   client.on("message", recievedMessage => {
@@ -27,12 +32,34 @@ client.on("ready", () => {
     }
     //recievedMessage.channel.send("Recieved your message, " + recievedMessage.author.toString() + ": " + recievedMessage.content);
     processMenu(recievedMessage);
+    //respond(recievedMessage);
 
   });
 
+//const helloResponses = ["Hello", "Hi", "Hi there"];
+// The onMessage event handler
+
+  //Responses for Hello 
+// function respond (msg) {
+//   client.on('message', function (message) {
+//     if (message.author.bot) return;
+//     if (!message.content.startsWith("")) return;
+//     var args = message.content.substring("".length).split(" ");
+//     switch (args[0].toLowerCase()) {
+//         case "hello":
+//             var response = helloResponses [Math.floor(Math.random()*helloResponses .length)];
+//             message.channel.send(response).then().catch(console.error);
+//             break;
+//         default:
+//             break;
+//     }
+// });
+// }
+
+
+
   function processMenu(recievedMessage){
-      
-    //var place1 = recievedMessage.content.includes("locat");
+    var keywords = ['internet', 'electricity', 'officeHours', 'emails', 'cohort', 'learnership', 'crashCourse', 'productTeams', 'careerTracks', 'location', 'meetups'];
     if(recievedMessage.content == "Career Tracks" || recievedMessage.content == "career tracks") {
       careerTracks(recievedMessage);
     }
@@ -74,7 +101,7 @@ client.on("ready", () => {
   function careerTracks (recievedMessage){
     //if(recievedMessage.content == )
     const careers = new Discord.Attachment('career.png');
-    recievedMessage.channel.send("We offers these high-value careers.");
+    recievedMessage.channel.send("We offer these high-value careers.");
     recievedMessage.channel.send(careers);
     setTimeout(function(){
       recievedMessage.channel.send("Which one are you interested in?");
@@ -92,19 +119,36 @@ client.on("ready", () => {
 
     if(choose.content == "Copywriting" || choose.content == "copywriting"){
       choose.channel.send("For more information on this, here is the link. Enjoy😋");
-      //choose.channel.send("https://www.umuzi.org/copywriting"); 
-      choose.channel.send(
-        get('CopywritingUmuzi.html')
-        .then(function(response){
-          return response.text()
-        })
-        .then(function(html){
-          var parser = DOMParser();
 
-          var doc = parser.parseFromString(html, "text/html")
-          console.log(doc);
-        })
-      )
+    //   choose.writeHead(200, {"Content-Type":"text/html"});
+    // fs.readFile('CopywritingUmuzi.html', "utf8", function(err, data) {
+    //     if (err) throw err;
+    //     choose.channel.send(data);
+    //     //resp.end();
+    // });
+
+      //choose.channel.send("https://www.umuzi.org/copywriting"); 
+      //choose.channel.readFile('CopywritingUmuzi.html');
+      
+      var page = new Discord.Attachment('./images/CopywritingUmuzi.pdf');
+      var myReadStream;
+      //app.use(bodyParser.urlencoded({extended: false}));      
+      //choose.channel.send( page );
+
+      //fs = require('fs')
+
+      
+        var dataa = fs.readFileSync('./public/some.html', 'utf8', function (err,data) {
+          if (err) {
+            return console.log(err);
+          }
+          console.log(data);
+
+    })
+    choose.channel.send(dataa);
+      
+      
+
     }
     if(choose.content == "data science" || choose.content == "data engineering"){
       choose.channel.send("For more information on this, here is the link. Enjoy😋");
@@ -114,7 +158,7 @@ client.on("ready", () => {
     if(choose.content == "multimedia" || choose.content == "Multimedia"){
       choose.channel.send("For more information on this, here is the link. Enjoy😋");
       choose.channel.send("https://www.umuzi.org/multimedia");
-    }
+    } 
     if(choose.content == "UI Design" || choose.content == "ui design"){
       choose.channel.send("For more information on this, here is the link. Enjoy😋");
       choose.channel.send("https://www.umuzi.org/ui-design");
@@ -133,4 +177,4 @@ client.on("ready", () => {
   }
 
 
-client.login("NjY0MDI4MTc0OTc1MzY5MjE2.XhWdsw.qIbyqKPGJ_kn7diSuleJFzvyji8");
+client.login("");
