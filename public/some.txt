@@ -1,0 +1,366 @@
+𝔗𝔥𝔢 𝔟𝔢𝔰𝔱 𝔴𝔬𝔯𝔡𝔰 𝔦𝔫 𝔱𝔥𝔢 𝔟𝔢𝔰𝔱 𝔬𝔯𝔡𝔢𝔯
+— 𝔖𝔞𝔪𝔲𝔢𝔩 𝔗𝔞𝔶𝔩𝔬𝔯 ℭ𝔬𝔩𝔢𝔯𝔦𝔡𝔤𝔢 —
+
+COPYWRITING 📚
+CONTENT WRITERS WITH TRADITION AND DIGITAL SKILLS.
+
+Copy may be writing, but copywriting isn’t just about words. 
+It’s about playing with ideas. Whether it’s the instructions for a sex toy or the inauguration 
+speech for a president, copywriters create meaning, deliver a message, and call an audience to action.
+
+Writing seems like a solitary pursuit. It isn’t here. At Umuzi, you’ll learn to work in a team,
+often with a designer, sometimes a strategist, and always with your target audience top of mind. 
+You’ll use empathy to understand the audience you’re trying to reach, define their problems, come up with ideas, 
+prototype, and test them, using our Design Thinking process.
+
+Where to next? Many of our alumni turn to advertising, working for top agencies and brands, 
+en route to becoming Creative Directors. Copywriters are employed by agencies both permanently 
+and on a freelance basis to develop advertising concepts. Agency copywriters usually work in close 
+partnership with art directors and have lots of input to the visual elements. Another option is to 
+move into the world of content creation, writing for online publications. Increasingly copywriters 
+are also essential to Tech Product Teams, in the software and game development space, to script user
+journeys and user interfaces. They deliver the words and verbal content that accompanies the visual elements.
+
+Imagine where this career could take you. Now write your story.
+
+
+
+
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const express = require ('express');
+const TOKEN = 'NjY0MDI4MTc0OTc1MzY5MjE2.Xhxh0Q.Vx170ik_XB9xMt5nVdejeiy0zLg';
+const app = express();
+var fs = require('fs');
+const logo = "https://umuzi.gnomio.com/pluginfile.php/1/core_admin/logo/0x150/1573344297/Logo-02.png";
+const bodyParser = require('body-parser');
+//import htmlToImage from 'html-to-image';
+
+client.on("ready", () => {
+  console.log("connected as " + client.user.tag);
+
+  client.user.setActivity("Online");
+
+  client.guilds.forEach(guild => {
+    console.log(guild.name);
+    guild.channels.forEach(channel => {
+      //console.log(` - ${channel.name} ${channel.type} ${channel.id}`);
+    });
+    //============================================================
+    //general channel id 664022584479973378
+    let generalChannel = client.channels.get("664022584479973378");
+
+    const attachment = new Discord.Attachment('im (1).png');
+    generalChannel.send(attachment);
+    generalChannel.send("Hello from Umuzi! \n𝓷𝓲𝓬𝓮 𝓽𝓸 𝓼𝓮𝓮 𝔂𝓸𝓾 \n \nPlease type a keyword you want me to help you with.");
+  });
+});
+  client.on("message", recievedMessage => {
+    if (recievedMessage.author == client.user) {
+      return;
+    }
+    //recievedMessage.channel.send("Recieved your message, " + recievedMessage.author.toString() + ": " + recievedMessage.content);
+    processMenu(recievedMessage);
+    //respond(recievedMessage);
+
+  });
+
+//const helloResponses = ["Hello", "Hi", "Hi there"];
+// The onMessage event handler
+
+  //Responses for Hello 
+// function respond (msg) {
+//   client.on('message', function (message) {
+//     if (message.author.bot) return;
+//     if (!message.content.startsWith("")) return;
+//     var args = message.content.substring("".length).split(" ");
+//     switch (args[0].toLowerCase()) {
+//         case "hello":
+//             var response = helloResponses [Math.floor(Math.random()*helloResponses .length)];
+//             message.channel.send(response).then().catch(console.error);
+//             break;
+//         default:
+//             break;
+//     }
+// });
+// }
+
+
+
+  function processMenu(recievedMessage){
+    var keywords = ['internet', 'electricity', 'officeHours', 'emails', 'cohort', 'learnership', 'crashCourse', 'productTeams', 'careerTracks', 'location', 'meetups'];
+    if(recievedMessage.content == "Career Tracks" || recievedMessage.content == "career tracks") {
+      careerTracks(recievedMessage);
+    }
+    if(recievedMessage.content == "Learnership" || recievedMessage.content == "learnership") {
+      learnerships(recievedMessage);
+    }
+    if(recievedMessage.content == "Location" || recievedMessage.content == "location") {
+      locationCommand(recievedMessage);
+    }
+    if(recievedMessage.content == "Application" || recievedMessage.content == "application") {
+      applicationCommand();
+    }
+    //fix!!!!!!!!
+    if(recievedMessage.content == "" || recievedMessage.content == isNaN) {
+      recievedMessage.channel.send("Please key in the keywords written above according to what you need help with. e.g `Location`")
+    }
+
+
+  }
+
+  function locationCommand (recievedMessage){
+
+  recievedMessage.channel.send("I'm guessing you want to know where we are based.");
+
+  setTimeout(function(){
+    recievedMessage.channel.send("Umuzi is at 28 Madison St, Jeppestown, Johannesburg \n \n" + "https://www.google.com/maps/place/Umuzi/@-26.2069544,28.0637644,15z/data=!4m5!3m4!1s0x0:0xf5a78a7d74f3f331!8m2!3d-26.2069544!4d28.0637644");
+  }, 2500);
+
+  }
+    
+  function learnerships(recievedMessage){
+    recievedMessage.channel.send("Umuzi works with leading employers to find and develop scarce digital skills and talent. \nWe need your help to create more jobs for talented young people. Over 80% of our graduates get jobs at top employers. And there are thousands more talented young people in our pipeline, screened and ready for an opportunity. Partner with Umuzi to create high-value jobs. \n \n We also support leading employers to train their staff through employed learnerships and short-courses.");
+    recievedMessage.channel.send("https://www.umuzi.org/createjobs/#Create-Jobs-Contact");
+    recievedMessage.channel.send("________________________________________________________")
+    recievedMessage.channel.send("Umuzi works with leading employers to find and develop scarce digital skills and talent. We need your help to create more jobs for talented young people. Over 80% of our graduates get jobs at top employers. And there are thousands more talented young people in our pipeline, screened and ready for an opportunity. Partner with Umuzi to create high-value jobs. We also support leading employers to train their staff through employed learnerships and short-courses.Invest your Skills Development budget in scarce digital skills. We help our employer partners to develop exceptional young people, train their staff, and realise the full B-BBEE and SARS tax benefits of creating jobs. Umuzi is accredited by MICT SETA. Our Skills Development team are ready to structure and administer programme specifically for your needs.")
+  }
+
+
+  function careerTracks (recievedMessage){
+    //if(recievedMessage.content == )
+    const careers = new Discord.Attachment('career.png');
+    recievedMessage.channel.send("We offer these high-value careers.");
+    recievedMessage.channel.send(careers);
+    setTimeout(function(){
+      recievedMessage.channel.send("Which one are you interested in?");
+      department(recievedMessage);
+    }, 2000);
+    
+    
+
+  }
+
+  function department(){
+
+    const data = ["data science", "Data Science", "data Science", 
+    "Data science", "Data science", "Data science", "data",  "DATA", "Data",
+    "data engineering", 'Data Engineering', "data Engineering", "DATA ENGINEERING", 
+    "dataengineering", "DATAENGINEERING"];
+
+    const copywriting = ["Copywriting", "copywriting", "COPYWRITING", "copy writing","COPY WRITING", "COPY WRITING", "COPY writing" ];
+  
+    client.on("message", choose => {
+      //var myData = choose.content.includes("data");
+
+      
+        
+
+      // for(let i=0; i<copywriting.length; i++){
+      //   if(choose.content === copywriting[i]){
+      //     choose.channel.send("𝚃𝚑𝚎 𝚠𝚘𝚛𝚕𝚍 𝚒𝚜 𝚘𝚗𝚎 𝚋𝚒𝚐 𝚍𝚊𝚝𝚊 𝚙𝚛𝚘𝚋𝚕𝚎𝚖. \n — 𝙰𝚗𝚍𝚛𝚎𝚠 𝙼𝚌𝙰𝚏𝚎𝚎 — \n\nFor more information on this, here is the link. Enjoy😋");
+      //   choose.channel.send("https://www.umuzi.org/data");
+      //   }
+        
+      // }
+
+      // for(let i=0; i<copywriting.length; i++){
+        
+      // }
+
+      switch (choose.content) {
+        case data[0]:
+        case data[1]:
+        case data[2]:
+        case data[3]:
+        case data[4]:
+        case data[5]:
+        case data[6]:
+        case data[7]:
+        case data[8]:
+        case data[9]:
+        case data[10]:
+        case data[11]:
+        case data[12]:
+        case data[13]:
+        case data[14]:
+          case data[15]:  
+          choose.channel.send("𝚃𝚑𝚎 𝚠𝚘𝚛𝚕𝚍 𝚒𝚜 𝚘𝚗𝚎 𝚋𝚒𝚐 𝚍𝚊𝚝𝚊 𝚙𝚛𝚘𝚋𝚕𝚎𝚖. \n — 𝙰𝚗𝚍𝚛𝚎𝚠 𝙼𝚌𝙰𝚏𝚎𝚎 — \n\nFor more information on this, here is the link. Enjoy😋");
+          choose.channel.send("https://www.umuzi.org/data");
+          break;
+          case copywriting[0]:
+            case copywriting[1]:
+              case copywriting[2]:
+                case copywriting[3]:
+                  case copywriting[4]:
+                    case copywriting[5]:
+                      case copywriting[6]: 
+                      choose.channel.send("𝚃𝚑𝚎 𝚠𝚘𝚛𝚕𝚍 𝚒𝚜 𝚘𝚗𝚎 𝚋𝚒𝚐 𝚍𝚊𝚝𝚊 𝚙𝚛𝚘𝚋𝚕𝚎𝚖. \n — 𝙰𝚗𝚍𝚛𝚎𝚠 𝙼𝚌𝙰𝚏𝚎𝚎 — \n\nFor more information on this, here is the link. Enjoy😋");
+      choose.channel.send("https://www.umuzi.org/data");
+
+        break; 
+        case data[0]:
+          case data[0]:
+            case data[0]:
+              case data[0]:
+                case data[0]:
+                  case data[0]:
+                    case data[0]:
+                      case data[0]:
+                        case data[0]:
+                          case data[0]:
+                            case data[0]:
+                              case data[0]:
+                                break;
+                                case data[0]:
+                                  case data[0]:
+                                    case data[0]:
+                                      case data[0]:
+                                        case data[0]:
+                                          case data[0]:
+                                            case data[0]:
+                                              case data[0]:
+                                                case data[0]:
+                                                  case data[0]:
+                                                    case data[0]:
+                                                      case data[0]:
+break;
+case data[0]:
+  case data[0]:
+    case data[0]:
+      case data[0]:
+        case data[0]:
+          case data[0]:
+        case data[0]:
+        case data[0]:
+        case data[0]:
+        case data[0]:
+        case data[0]:
+        case data[0]:
+        case data[0]:
+        case data[0]:
+          case data[0]:
+break;
+
+case data[0]:
+  case data[0]:
+    case data[0]:
+      case data[0]:
+        case data[0]:
+          case data[0]:
+        case data[0]:
+        case data[0]:
+        case data[0]:
+        case data[0]:
+          case data[0]:
+break;
+
+
+
+      }
+
+      //   
+      //   break;
+      // case "Multi-media":
+      // case "MULTIMEDIA":
+      // case "multimedia":
+      // case "mutli media":
+      // case "Multi Media":
+      //   choose.channel.send("For more information on this, here is the link. Enjoy😋");
+      //   choose.channel.send("https://www.umuzi.org/multimedia");
+      //   break;
+      // case "ui design":
+      //   case "UI Design":
+      //     case "Ui Design":
+      //       case "ui-design":
+      //         case "design":
+      //           case "UI DESIGN":
+      //         choose.channel.send("For more information on this, here is the link. Enjoy😋");
+      //         choose.channel.send("https://www.umuzi.org/ui-design");
+      //         break;
+      // case "ux strategy":
+      //   case "UX Strategy":
+      //     case "strategy":
+      //       case "ux-strategy":
+      //         case "ux strategy":
+      //         choose.channel.send("For more information on this, here is the link. Enjoy😋");
+      //         choose.channel.send("https://www.umuzi.org/ux-strategy");
+      //         break;
+      // case "web development":
+      //   case "web dev":
+      //     case "dev":
+      //       case "Web Development":
+      //         case "WEB DEVELOPMENT":
+      //           choose.channel.send("For more information on this, here is the link. Enjoy😋");
+      //           choose.channel.send("https://www.umuzi.org/web-development");
+      //           break;
+                
+      //           // default:
+      //           //   setTimeout(function(){
+      //           //     choose.channel.send("Please type in one of the departments above!");
+      //           //   }, 2000);
+      // }
+
+    // if(choose.content == "Copywriting" || choose.content == "copywriting"){
+    //   //choose.channel.send("For more information on this, here is the link. Enjoy😋");
+
+    // //   choose.writeHead(200, {"Content-Type":"text/html"});
+    // // fs.readFile('CopywritingUmuzi.html', "utf8", function(err, data) {
+    // //     if (err) throw err;
+    // //     choose.channel.send(data);
+    // //     //resp.end();
+    // // });
+
+    //   //choose.channel.send("https://www.umuzi.org/copywriting"); 
+    //   //choose.channel.readFile('CopywritingUmuzi.html');
+      
+    //   var page = new Discord.Attachment('./images/CopywritingUmuzi.pdf');
+    //   var myReadStream;
+    //   //app.use(bodyParser.urlencoded({extended: false}));      
+    //   //choose.channel.send( page );
+
+    //   //fs = require('fs')
+
+      
+    //     var dataa = fs.readFileSync('./public/some.txt', 'utf8', function (err,data) {
+    //       if (err) {
+    //         return console.log(err);
+    //       }
+    //       console.log(data);
+
+    // })
+    // choose.channel.send(dataa);
+      
+      
+
+    // }
+    // if(choose.content == "data" || choose.content == "data science" || choose.content == "data engineering"){
+    //   choose.channel.send("𝚃𝚑𝚎 𝚠𝚘𝚛𝚕𝚍 𝚒𝚜 𝚘𝚗𝚎 𝚋𝚒𝚐 𝚍𝚊𝚝𝚊 𝚙𝚛𝚘𝚋𝚕𝚎𝚖. \n — 𝙰𝚗𝚍𝚛𝚎𝚠 𝙼𝚌𝙰𝚏𝚎𝚎 — \n\nFor more information on this, here is the link. Enjoy😋");
+    //   choose.channel.send("https://www.umuzi.org/data");
+    //   //myData = false;
+    // }
+
+    // if(choose.content == "multimedia" || choose.content == "Multimedia"){
+    //   choose.channel.send("For more information on this, here is the link. Enjoy😋");
+    //   choose.channel.send("https://www.umuzi.org/multimedia");
+    // } 
+    // if(choose.content == "UI Design" || choose.content == "ui design"){
+    //   choose.channel.send("For more information on this, here is the link. Enjoy😋");
+    //   choose.channel.send("https://www.umuzi.org/ui-design");
+    // }
+    // if(choose.content == "UX Strategy" || choose.content == "ux strategy"){
+    //   choose.channel.send("For more information on this, here is the link. Enjoy😋");
+    //   choose.channel.send("https://www.umuzi.org/ux-strategy");
+    // }
+    // if(choose.content == "Web Development" || choose.content == "web development" || choose.content == "web dev"){
+    //   choose.channel.send("For more information on this, here is the link. Enjoy😋");
+    //   choose.channel.send("https://www.umuzi.org/web-development");
+    // }
+
+
+    
+})
+  }
+
+
+client.login(TOKEN);
